@@ -9,6 +9,7 @@ using namespace std;
 
 // Função de apoio que recebe um istringstream e
 // le todo texto restante até o fim da linha
+//ele le ate chegar em um espaco
 string restoDe(istringstream &ss) {
   string resto;
   getline(ss, resto, '\0'); // ler o resto da linha
@@ -52,18 +53,120 @@ string Executor::processarLinha(string linha) {
     return "Comando Inválido <vazio>";
   }
 
-  if (nomeComando == "quit" ) {
+  else if (nomeComando == "quit" ) {
     this->sair = true;
     return sistema->quit();
   }
   else if (nomeComando == "create-concessionaria") {
-    string nome;    
-    nome = restoDe(buf);
-    return sistema->create_concessionaria(nome);
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string nome, cnpj;
+		int Nveiculos;
+		buf >> nome;
+		buf >> cnpj;
+		buf >> Nveiculos;
+		return sistema->create_concessionaria(nome, cnpj, Nveiculos);
   }
+	else if (nomeComando == "add-car"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string nome, marca, chassi, tipomotor;
+		int valor, ano;
+		buf >> nome;
+		buf >> marca;
+		buf >> valor;
+		buf >> chassi;
+		buf >> ano;
+		buf >> tipomotor;
+		return sistema->add_car(nome, marca, valor, chassi, ano, tipomotor);
+	}
+	else if (nomeComando == "add-truck"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string nome, marca, chassi, tipocarga;
+		int valor, ano;
+		buf >> nome;
+		buf >> marca;
+		buf >> valor;
+		buf >> chassi;
+		buf >> ano;
+		buf >> tipocarga;
+		return sistema->add_truck(nome, marca, valor, chassi, ano, tipocarga);
+	}
+	else if (nomeComando == "add-bike"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string nome, marca, chassi, modelo;
+		int valor, ano;
+		buf >> nome;
+		buf >> marca;
+		buf >> valor;
+		buf >> chassi;
+		buf >> ano;
+		buf >> modelo;
+		return sistema->add_bike(nome, marca, valor, chassi, ano, modelo);
+	}
+	else if (nomeComando == "search-vehicle"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string chassi;
+		
+		buf >> chassi;
+		
+		return sistema->search_vehicle(chassi);
+	}
+	else if (nomeComando == "remove-vehicle"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string chassi;
+		
+		buf >> chassi;
+		
+		return sistema->remove_vehicle(chassi);
+	}
+	else if (nomeComando == "list-concessionaria"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string concessionaria;
+		
+		buf >> concessionaria;
+		
+		return sistema->list_concessionaria(concessionaria);
+	}
+	else if (nomeComando == "raise-price"){
+		string linha;
+		linha = restoDe(buf);
+		buf.clear();
+		buf.str(linha);
+		string concessionaria;
+		int aumento;
+		buf >> concessionaria;
+		buf >> aumento;
+		return sistema->raise_price(concessionaria, aumento);
+	}
 
+	
   return "Erro";	
+
+	
+
+	
 }
 
+//usar map, relaciona o nome atraves da key a concessionaria hehe
 
 
