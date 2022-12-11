@@ -119,7 +119,7 @@ raise-price IMD_SA 10
   - 10: implementado e funcional 
   - bonus +10: implementado com uso de método virtual
 
-- Implementação e uso do comando `save-concessionaria` e `load-concessionaria` | **... / 30**
+- Implementação e uso do comando `save-concessionaria` e `load-concessionaria` | **30 / 30**
   - 0: não implementado
   - 15: ambos os comandos implementados e funcionais
   
@@ -143,6 +143,6 @@ raise-price IMD_SA 10
  
  # Total
  
- **120 / 150 ** pontos (sem bônus)
+ **150 / 150 ** pontos (sem bônus)
  
- **120 / 200 ** pontos (com bônus)
+ **150 / 200 ** pontos (com bônus)

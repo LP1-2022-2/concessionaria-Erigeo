@@ -11,6 +11,7 @@
 #include "moto.h"
 #include <numeric>
 #include <string.h>
+#include <fstream>
 using namespace std;
 
 /* COMANDOS */
@@ -241,3 +242,85 @@ string Sistema::raise_price(const string concessionaria, const int aumento){
 		return "";
 	}
 
+string Sistema::save_concessionaria(const string concessionaria){
+	map<string, Concessionaria>::iterator it;
+	map<string, moto>::iterator ITmoto;
+	map<string, carro>::iterator ITcarro;
+	map<string, caminhao>::iterator ITcaminhao;
+	string a;
+	string filename = concessionaria;
+	filename.append(".txt");
+	
+	
+	it = concessionarias.find(concessionaria);
+	ofstream myfile;
+	myfile.open(filename);
+	myfile << (it->first) << "," << (it->second).getcnpj()<< "," <<(it->second).getNveiculos() << endl;
+	for(ITmoto = concessionarias.at(concessionaria).Lmoto.begin(); ITmoto != concessionarias.at(concessionaria).Lmoto.end(); ITmoto++){
+		myfile << ITmoto->second.tipo << "," <<ITmoto->second.getmarca() << "," << ITmoto->second.getpreco() << "," << ITmoto->first << "," << ITmoto->second.getanoF() << "," <<  ITmoto->second.getModelo() << endl;
+		}
+	
+		for(ITcarro = concessionarias.at(concessionaria).Lcarro.begin(); ITcarro != concessionarias.at(concessionaria).Lcarro.end(); ITcarro++){
+			 myfile << ITcarro->second.tipo << "," <<ITcarro->second.getmarca() << "," << ITcarro->second.getpreco() << "," << ITcarro->first << "," << ITcarro->second.getanoF() << "," << ITcarro->second.getcarro() << endl;
+		}
+	
+		for(ITcaminhao = concessionarias.at(concessionaria).Lcaminhao.begin(); ITcaminhao != concessionarias.at(concessionaria).Lcaminhao.end(); ITcaminhao++){
+			 myfile << ITcaminhao->second.tipo << "," << ITcaminhao->second.getmarca() << "," << ITcaminhao->second.getpreco() << "," << ITcaminhao->first << "," << ITcaminhao->second.getanoF() << "," << ITcaminhao->second.getcaminhao() << endl;
+		}
+	
+	myfile.close();
+	cout << "Concessionaria " << concessionaria << " criada com sucesso." << endl;
+	return "";
+}
+
+string Sistema::load_concessionaria(const string arquivo){
+	istringstream s;
+	vector<string> v_concessionaria;
+	int i = 0;
+	string concessionaria;
+	string mytext, line, word;
+	string cnpj, Nveiculos, nome;
+	string tipo, nome1, marca, preco, chassi, ano, diferencial;
+	ifstream readfile(arquivo);
+	readfile >> mytext;
+	s.str(mytext);
+	while(getline(s, concessionaria, ',')){
+		v_concessionaria.push_back(concessionaria);
+	}
+	nome = v_concessionaria[0];
+	cnpj = v_concessionaria[1];
+	Nveiculos = v_concessionaria[2];
+	create_concessionaria(nome, cnpj, stoi(Nveiculos));
+	v_concessionaria.erase(v_concessionaria.begin(), v_concessionaria.end());
+
+	while(readfile >> mytext){
+s.clear();
+s.str(mytext);
+while(getline(s, word, ',')){
+	v_concessionaria.push_back(word);
+	if(i == 5){
+	if(v_concessionaria[0] == "moto"){
+	add_bike(nome, v_concessionaria[1], stoi(v_concessionaria[2]), v_concessionaria[3], stoi(v_concessionaria[4]), (v_concessionaria[5]));
+	v_concessionaria.erase(v_concessionaria.begin(), v_concessionaria.end());
+		i = -1;
+	}
+	else if(v_concessionaria[0] == "carro"){
+	add_car(nome, v_concessionaria[1], stoi(v_concessionaria[2]), (v_concessionaria[3]), stoi(v_concessionaria[4]), v_concessionaria[5]);
+	v_concessionaria.erase(v_concessionaria.begin(), v_concessionaria.end());
+		i = -1;
+	}
+	else if(v_concessionaria[0] == "caminhao"){
+	add_truck(nome, v_concessionaria[1], stoi(v_concessionaria[2]), (v_concessionaria[3]), stoi(v_concessionaria[4]), v_concessionaria[5]);
+	v_concessionaria.erase(v_concessionaria.begin(), v_concessionaria.end());
+		i = -1;
+	}
+	}
+			i++;
+	}
+}
+	
+	
+	
+	readfile.close();
+	return "";
+	}
