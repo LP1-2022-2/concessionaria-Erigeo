@@ -18,64 +18,65 @@
   1) create-concessionaria
   
   Exemplo:
-  create-concessionaria IMD_SA 11.111.111/0001-11 0
+  	create-concessionaria IMD_SA 11.111.111/0001-11 0
   
   Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
 
   2) add-car
      
      Exemplo:
-     add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
+     	add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
 
 		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de motor.
 
 2) add-truck
      
      Exemplo:
-     add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
+     	add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
 
 		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de carga.
 
 3) add-bike
 
 	Exemplo:
-add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
+		add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
 
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o modelo.
 
 4) remove-vehicle
    É possível remover algum veículo cadastrado a partir do seu chassi.
-   Exemplo:
-    remove-vehicle 9BRBLWHEXG0107721
+   	Exemplo:
+    	remove-vehicle 9BRBLWHEXG0107721
 
 5) search-vehicle
    Utilize esse comando para a partir de um chassi ter acesso as informações sobre um veículo.
-   Exemplo:
-   search-vehicle 9BRBLWHEXG0107721
+   	Exemplo:
+   		search-vehicle 9BRBLWHEXG0107721
 
 6) list-concessionaria
   O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos valores e o total da frota.
 
- exemplo:
- 	list-concessionaria IMD_SA
+ 	exemplo:
+ 		list-concessionaria IMD_SA
 
  7) raise-price
     A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção de uma concessionária específica.
     
 	exemplo:
-raise-price IMD_SA 10
-8) save-concessionaria
+		raise-price IMD_SA 10
+
+9) save-concessionaria
    Permite salvar uma concessionária em um arquivo.txt
 
 	 exemplo:
 			save-concessionaria IMD_SA
 
 
-9) load-concessionaria
+10) load-concessionaria
 		Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
 
-	exemplo:
-		load-concessionaria IMD_SA.txt
+			exemplo:
+				load-concessionaria IMD_SA.txt
 
 11) quit
 	Comando utilizado para finalizar o programa.
