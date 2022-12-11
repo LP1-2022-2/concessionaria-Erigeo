@@ -64,10 +64,25 @@ Insira após o comando o nome da Concessionaria previamente criada, a marca do v
     
 	exemplo:
 raise-price IMD_SA 10
+8) save-concessionaria
+   Permite salvar uma concessionária em um arquivo.txt
+
+	 exemplo:
+			save-concessionaria IMD_SA
 
 
-9) quit
-   Comando utilizado para finalizar o programa.
+9) load-concessionaria
+		Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
+
+	exemplo:
+		load-concessionaria IMD_SA.txt
+
+11) quit
+	Comando utilizado para finalizar o programa.
+		
+		exemplo:
+				quit
+   
 
 # Limitações
 
