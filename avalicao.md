@@ -10,19 +10,26 @@
 # Compilando  
 
 * Para compilar o programa Concessionaria, basta utilizar o comando "make". Dessa forma, as Flags são definidas automaticamente para o usuário.
-* O executável pode ser encontrado na pasta build/.
+* O executável pode ser encontrado na pasta build/
+
+# Valgrind
+*Para verificar se está acontecendo algum vazamento de memória, remova na pasta Makefile o -"fsanitize=address".
+*Execute o programa inserindo a palavra valgrind antes do nome do executável.
+	Exemplo: valgrind ./build/programa
+*Insira os comandos, após isso finalize com quit
+*Aguarde o relatório do valgrind.
 
 
 # Instruções de execução do programa.
 * Comandos:
-  1) create-concessionaria
+1) create-concessionaria
   
   Exemplo:
   	create-concessionaria IMD_SA 11.111.111/0001-11 0
   
   Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
 
-  2) add-car
+2) add-car
      
      Exemplo:
      	add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
@@ -31,10 +38,10 @@
 
 2) add-truck
      
-     Exemplo:
+	 Exemplo:
      	add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
 
-		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de carga.
+		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu 			valor, chassi, ano de fabricação e o tipo de carga.
 
 3) add-bike
 
@@ -44,45 +51,55 @@
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o modelo.
 
 4) remove-vehicle
-   É possível remover algum veículo cadastrado a partir do seu chassi.
+   
+	É possível remover algum veículo cadastrado a partir do seu chassi.
    	Exemplo:
     	remove-vehicle 9BRBLWHEXG0107721
+   Insira após o comando o chassi do veículo ao qual quer remover
 
-5) search-vehicle
+6) search-vehicle
+
    Utilize esse comando para a partir de um chassi ter acesso as informações sobre um veículo.
    	Exemplo:
    		search-vehicle 9BRBLWHEXG0107721
+   Insira após o comando o chassi do veículo ao qual quer procurar.
 
-6) list-concessionaria
-  O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos valores e o total da frota.
+8) list-concessionaria
+
+	O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos 		valores e o total da frota.
 
  	exemplo:
  		list-concessionaria IMD_SA
+   Insira após o comando o nome da concessionária.
 
- 7) raise-price
-    A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção de uma concessionária específica.
+ 10) raise-price
+
+	A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção 	de uma concessionária específica.
     
 	exemplo:
 		raise-price IMD_SA 10
+		Insira após o comando o nome da concessionária e a porcentagem(sem %).
+11) save-concessionaria
 
-9) save-concessionaria
    Permite salvar uma concessionária em um arquivo.txt
 
 	 exemplo:
 			save-concessionaria IMD_SA
 
+insira o nome da concessionária apos o comando
+11) load-concessionaria
+	Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
 
-10) load-concessionaria
-		Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
+	exemplo:
+		load-concessionaria IMD_SA.txt
+	insira apos o comando o nome do arquivo.txt
 
-			exemplo:
-				load-concessionaria IMD_SA.txt
-
-11) quit
-	Comando utilizado para finalizar o programa.
+12) quit
+	
+ Comando utilizado para finalizar o programa.
 		
-		exemplo:
-				quit
+	exemplo:
+		quit
    
 
 # Limitações

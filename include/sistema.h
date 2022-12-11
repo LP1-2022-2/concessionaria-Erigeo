@@ -24,12 +24,11 @@ class Sistema {
 		std::string create_concessionaria (const std::string nome, const std::string cnpj, const int Nveiculos);
 
 		std::string add_car ( const string nome, const string marca, const int valor, const string chassi, const int ano, const string tipomotor);
-		//std::string add_car ( )
+		
 std::string add_truck ( const string nome, const string marca, const int valor, const string chassi, const int ano, const string tipocarga);
-		//std::string add_car ( )
+		
 
 std::string add_bike ( const string nome, const string marca, const int valor, const string chassi, const int ano, const string modelo);
-		//std::string add_car ( )
 
 std::string search_vehicle(const string chassi);
 

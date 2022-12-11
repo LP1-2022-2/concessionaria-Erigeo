@@ -33,7 +33,7 @@ objects: $(OBJECTS)
 
 programa: objects src/programa.cpp
 	g++ -Wall -fsanitize=address -Iinclude $(OBJECTS) src/programa.cpp -o build/programa
-
+#-fsanitize=address
 clean:
 	rm build/*.o build/programa
 
