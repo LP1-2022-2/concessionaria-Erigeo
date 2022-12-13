@@ -34,21 +34,21 @@ Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para
    
 		Exemplo:
 		add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
-
+	
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de motor.
 
 3) add-truck
-
-   	Exemplo:
-   	add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
-
+   
+		Exemplo:
+		add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
+	
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de carga.
 
 4) add-bike
-  
-   	Exemplo:
-   	add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
-
+   
+		Exemplo:
+		add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
+	
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o modelo.
 
 5) remove-vehicle
