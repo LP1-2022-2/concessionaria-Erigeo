@@ -13,28 +13,28 @@
 * O executável pode ser encontrado na pasta build/
 
 # Valgrind
-*Para verificar se está acontecendo algum vazamento de memória, remova na pasta Makefile o -"fsanitize=address".
-*Execute o programa inserindo a palavra valgrind antes do nome do executável.
+* Para verificar se está acontecendo algum vazamento de memória, remova no arquivo Makefile o -"fsanitize=address".
+* Execute o programa inserindo a palavra valgrind antes do nome do executável.
 	Exemplo: valgrind ./build/programa
-*Insira os comandos, após isso finalize com quit
-*Aguarde o relatório do valgrind.
+* Insira os comandos, após isso finalize com quit
+* Aguarde o relatório do valgrind.
 
 
 # Instruções de execução do programa.
 * Comandos:
 1) create-concessionaria
-  
-  Exemplo:
+   
+		Exemplo:
   	create-concessionaria IMD_SA 11.111.111/0001-11 0
   
-  Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
+Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
 
 2) add-car
      
-     Exemplo:
-     	add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
+		Exemplo:
+		add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
 
-		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de motor.
+Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de motor.
 
 2) add-truck
      
@@ -92,7 +92,8 @@ insira o nome da concessionária apos o comando
 
 	exemplo:
 		load-concessionaria IMD_SA.txt
-	insira apos o comando o nome do arquivo.txt
+
+insira apos o comando o nome do arquivo.txt
 
 12) quit
 	
