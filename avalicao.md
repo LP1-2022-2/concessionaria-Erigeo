@@ -22,10 +22,11 @@
 
 # Instruções de execução do programa.
 * Comandos:
+  
 1) create-concessionaria
-   
+
 		Exemplo:
-  	create-concessionaria IMD_SA 11.111.111/0001-11 0
+		create-concessionaria IMD_SA 11.111.111/0001-11 0
   
 Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
 
@@ -38,15 +39,15 @@ Insira após o comando o nome da Concessionaria previamente criada, a marca do v
 
 3) add-truck
 
-   Exemplo:
-   add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
+   	Exemplo:
+   	add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
 
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de carga.
 
-5) add-bike
+4) add-bike
   
-   Exemplo:
-   add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
+   	Exemplo:
+   	add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
 
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o modelo.
 
@@ -59,7 +60,7 @@ Insira após o comando o nome da Concessionaria previamente criada, a marca do v
 	
 Insira após o comando o chassi do veículo ao qual quer remover.
 
-7) search-vehicle
+6) search-vehicle
 
 Utilize esse comando para a partir de um chassi ter acesso as informações sobre um veículo.
 
@@ -68,7 +69,7 @@ Utilize esse comando para a partir de um chassi ter acesso as informações sobr
    
 Insira após o comando o chassi do veículo ao qual quer procurar.
 
-9) list-concessionaria
+7) list-concessionaria
 
 O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos valores e o total da frota.
 
@@ -77,7 +78,7 @@ O comando devolve o total de veículos da concessionaria escolhida, junto com se
   
 Insira após o comando o nome da concessionária.
 
- 10) raise-price
+ 8) raise-price
 
 A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção 	de uma concessionária específica.
 
@@ -86,7 +87,7 @@ A partir desse comando é possivel aumentar todos os valores dos veículos segui
 		
 Insira após o comando o nome da concessionária e a porcentagem(sem %).
 
-11) save-concessionaria
+9) save-concessionaria
 
 Permite salvar uma concessionária em um arquivo.txt
 
@@ -95,7 +96,7 @@ Permite salvar uma concessionária em um arquivo.txt
 	
 Insira o nome da concessionária apos o comando
 
-12) load-concessionaria
+10) load-concessionaria
 
 Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
 
@@ -104,7 +105,7 @@ Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente e
 
 Insira apos o comando o nome do arquivo.txt
 
-13) quit
+11) quit
    
 Comando utilizado para finalizar o programa.
 
