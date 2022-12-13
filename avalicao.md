@@ -30,86 +30,94 @@
 Recebe do usuário o nome da Concessionária, CNPJ e o número de veículos para criar uma Concessionária e armazená-la no programa.
 
 2) add-car
-     
+   
 		Exemplo:
 		add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
 
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de motor.
 
-2) add-truck
-     
-	 Exemplo:
-     	add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
+3) add-truck
 
-		Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu 			valor, chassi, ano de fabricação e o tipo de carga.
+   Exemplo:
+   add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
 
-3) add-bike
+Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o tipo de carga.
 
-	Exemplo:
-		add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
+5) add-bike
+  
+   Exemplo:
+   add-bike IMD_SA YAMAHA 35000 7BRBLQHEXG02878811 2010 mobilete
 
 Insira após o comando o nome da Concessionaria previamente criada, a marca do veículo, o seu valor, chassi, ano de fabricação e o modelo.
 
-4) remove-vehicle
+5) remove-vehicle
+
+É possível remover algum veículo cadastrado a partir do seu chassi.
+
+		Exemplo:
+		remove-vehicle 9BRBLWHEXG0107721
+	
+Insira após o comando o chassi do veículo ao qual quer remover.
+
+7) search-vehicle
+
+Utilize esse comando para a partir de um chassi ter acesso as informações sobre um veículo.
+
+		Exemplo:
+		search-vehicle 9BRBLWHEXG0107721
    
-	É possível remover algum veículo cadastrado a partir do seu chassi.
-   	Exemplo:
-    	remove-vehicle 9BRBLWHEXG0107721
-   Insira após o comando o chassi do veículo ao qual quer remover
+Insira após o comando o chassi do veículo ao qual quer procurar.
 
-6) search-vehicle
+9) list-concessionaria
 
-   Utilize esse comando para a partir de um chassi ter acesso as informações sobre um veículo.
-   	Exemplo:
-   		search-vehicle 9BRBLWHEXG0107721
-   Insira após o comando o chassi do veículo ao qual quer procurar.
+O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos valores e o total da frota.
 
-8) list-concessionaria
-
-	O comando devolve o total de veículos da concessionaria escolhida, junto com seus respectivos 		valores e o total da frota.
-
- 	exemplo:
- 		list-concessionaria IMD_SA
-   Insira após o comando o nome da concessionária.
+ 		Exemplo:
+		list-concessionaria IMD_SA
+  
+Insira após o comando o nome da concessionária.
 
  10) raise-price
 
-	A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção 	de uma concessionária específica.
-    
-	exemplo:
+A partir desse comando é possivel aumentar todos os valores dos veículos seguindo uma proporção 	de uma concessionária específica.
+
+		Exemplo:
 		raise-price IMD_SA 10
-		Insira após o comando o nome da concessionária e a porcentagem(sem %).
+		
+Insira após o comando o nome da concessionária e a porcentagem(sem %).
+
 11) save-concessionaria
 
-   Permite salvar uma concessionária em um arquivo.txt
+Permite salvar uma concessionária em um arquivo.txt
 
-	 exemplo:
-			save-concessionaria IMD_SA
+		Exemplo:
+		save-concessionaria IMD_SA
+	
+Insira o nome da concessionária apos o comando
 
-insira o nome da concessionária apos o comando
-11) load-concessionaria
-	Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
+12) load-concessionaria
 
-	exemplo:
+Recupera os dados de uma concessionaria a partir de um arquivo.txt previamente existente
+
+		Exemplo:
 		load-concessionaria IMD_SA.txt
 
-insira apos o comando o nome do arquivo.txt
+Insira apos o comando o nome do arquivo.txt
 
-12) quit
-	
- Comando utilizado para finalizar o programa.
-		
-	exemplo:
-		quit
+13) quit
    
+Comando utilizado para finalizar o programa.
 
+		Exemplo:
+		quit
+
+	 
 # Limitações
 
 * A principal limitação do código é que ele é feito especificamente pra lidar apenas com carros, motos e caminhões. Sendo assim, seguindo a estrutura e lógica do código, caso o usuário quisesse por exemplo adicionar a categoria "Jetski", seria necessário criar uma classe e adicionar mais um container map na classe Concessionária e adaptar o restante do código.
 * Além disso, inicialmente senti muita dificuldade em visualizar qual tipo de container usar e em qual classe estaria esse container de veículos, chegando a conclusão baseado nos exemplos de comandos deixados no github que seria mais prático aderir ao uso de um container(map) para cada tipo de veículo ao invés de um único container com todos.
 * Contudo, também tive dificuldade nas primeiras tentativas -e que ainda me confude um pouco quando tenho que fazer alguma implementação no código- é em relação ao uso de iteradores, aos quais ainda tenho pouca familiaridade e sentia confusão ao utilizar-los para percorrer um map da lista de veículos que estava inserido em uma classe Concessionaria armazenada no map de Concessionarias, sendo necessário uma leitura com calma para me situar.
 * Todavia, tenho dúvidas em relação ao desempenho do código e em relação a memória, se a quantidade de containers utilizados pode comprometer algo, uma vez que só no comando $raise-prices utilizei 3 vetores(um pra cada tipo de veículo) para armazenar os preços, sendo assim, imagino que caso houvessem mais implementações acabaria reutilizando esse método que não me parece tão saudável a longo prazo.
-* descrição das limitações (caso existam) do programa e quaisquer dificuldades encontradas
    
 # Autoavaliação
 
